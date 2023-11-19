@@ -10,7 +10,7 @@ function followLink () {
         const deepLinkHref = deepLink.getAttribute("href");
         debugLog(`deepLinkHref: ${deepLinkHref}`);
 
-        window.location.href = deepLinkHref;
+        window.location.replace(deepLinkHref);
     } 
 
     if (direcLink){
