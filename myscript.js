@@ -1,3 +1,9 @@
+
+function isDesktop() {
+    const userAgent = navigator.userAgent;
+    return !/Mobi|Android|Tablet|iPad|iPhone|iPod/.test(userAgent);
+  }
+
 function followLink () {
            
     const deepLinkId = "deep_link";
@@ -10,7 +16,13 @@ function followLink () {
         const deepLinkHref = deepLink.getAttribute("href");
         debugLog(`deepLinkHref: ${deepLinkHref}`);
 
-        window.location.replace(deepLinkHref);
+        if (!isDesktop()){
+            debugLog('On Mobile');
+            window.location.replace(deepLinkHref);
+        } else {
+            debugLog('On Desktop');
+        }
+        
     } 
 
     if (direcLink){
