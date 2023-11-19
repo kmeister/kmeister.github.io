@@ -18,7 +18,7 @@ function followLink () {
 
         if (!isDesktop()){
             debugLog('On Mobile');
-            window.location.replace(deepLinkHref);
+            window.location.href=(deepLinkHref);
         } else {
             debugLog('On Desktop');
         }
